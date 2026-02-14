@@ -168,6 +168,10 @@ Set your environment variables in the platform dashboard and deploy. The include
 - [Claude](https://anthropic.com) (Anthropic) — AI reasoning and tool use
 - [Kalshi API](https://kalshi.com) — prediction market trading
 
+## Contributing
+
+Pull requests welcome. Branch off `dev`, open a PR, and keep changes focused.
+
 ## License
 
 MIT
