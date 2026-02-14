@@ -100,7 +100,14 @@ Copy the ngrok URL and set it as your webhook URL in the [Linq Blue dashboard](h
 5. Claude can search markets, check prices, place trades, view portfolio — all via tool use
 6. The response is sent back through Linq Blue as iMessage(s)
 
-Each user's Kalshi credentials are encrypted and stored in-memory on your server. No external database required.
+### Everything runs locally
+
+There is no remote database or external auth service. Everything lives on your machine (or your single deployment):
+
+- **User credentials** — Kalshi API keys are encrypted with AES-256-GCM and stored in-memory on the server process. They exist only in RAM and are lost on restart.
+- **Conversation history** — kept in-memory per chat with a 1-hour TTL. No persistence layer needed.
+- **User profiles** — names and facts Claude learns about users are stored in-memory on the server.
+- **Onboarding** — when a new user texts the bot, they receive a magic link pointing to your server's `/auth/setup` page. They paste their Kalshi API key ID and private key into the form, which submits directly to your server. Credentials never leave your infrastructure.
 
 ## Project Structure
 
