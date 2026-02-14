@@ -2,7 +2,7 @@
 
 A prediction market trading agent for [Kalshi](https://kalshi.com), accessible via iMessage. Built on [Linq Blue](https://linqapp.com) and powered by Claude (Anthropic).
 
-![Demo Screenshot](demo.png)
+![Demo Screenshot](public/images/kalshi-demo.png)
 
 ## What it does
 
