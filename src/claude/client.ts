@@ -659,7 +659,7 @@ export async function chat(chatId: string, userMessage: string, images: ImageInp
     // Fire-and-forget tools (reactions, effects, remember) are extracted at the end.
     const messages: Anthropic.MessageParam[] = [...formattedHistory, { role: 'user', content: messageContent }];
     let response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-opus-4-8',
       max_tokens: 1024,
       system: buildSystemPrompt(chatContext),
       tools,
@@ -884,7 +884,7 @@ export async function chat(chatId: string, userMessage: string, images: ImageInp
       messages.push({ role: 'user', content: toolResults });
 
       response = await client.messages.create({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-opus-4-8',
         max_tokens: 1024,
         system: buildSystemPrompt(chatContext),
         tools,
@@ -992,7 +992,7 @@ export async function chat(chatId: string, userMessage: string, images: ImageInp
  */
 export async function getTextForEffect(effectName: string): Promise<string> {
   const response = await client.messages.create({
-    model: 'claude-3-5-haiku-20241022',
+    model: 'claude-haiku-4-5',
     max_tokens: 100,
     messages: [{
       role: 'user',
@@ -1043,7 +1043,7 @@ export async function getGroupChatAction(
 
   try {
     const response = await client.messages.create({
-      model: 'claude-3-5-haiku-20241022',
+      model: 'claude-haiku-4-5',
       max_tokens: 20,
       system: `You classify how an AI trading assistant "Kai" should handle messages in a group chat.
 
